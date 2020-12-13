@@ -11,6 +11,7 @@ const handleRemove = (state, action) =>{
 }
 
 const items = createReducer([], {
+    [contactsActions.fetchContactSuccess]: (state, action) => action.payload,
     [contactsActions.addContactSuccess]: handleAdd,
     [contactsActions.onRemoveContact]: handleRemove,
 })
