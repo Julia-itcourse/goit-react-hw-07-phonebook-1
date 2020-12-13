@@ -13,6 +13,16 @@ const onAddContact = ({name, number}) => dispatch =>{
 
 }
 
+const onFetchContacts = () => dispatch => {
+    dispatch(contactsActions.fetchContactRequest());
+    axios
+    .get('http://localhost:2000/contacts')
+    .then(receivedData => dispatch(contactsActions.fetchContactSuccess(receivedData.data)))
+    .catch(error => dispatch(contactsActions.fetchContactError(error)));
+}
+
+
 export default {
     onAddContact,
+    onFetchContacts
 }
