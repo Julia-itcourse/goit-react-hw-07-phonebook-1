@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"
 import { CSSTransition } from "react-transition-group"
 import "./notification.css"
 import { connect } from "react-redux"
-import contactsActions from "../../redux/contacts/contactsActions"
+import contactsOperations from "../../redux/contacts/contactsOperations"
 
 class PhonebookForm extends Component {
   state = {
@@ -88,7 +88,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  onAddContact: contactsActions.onAddContact,
+  onAddContact: contactsOperations.onAddContact,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PhonebookForm)
