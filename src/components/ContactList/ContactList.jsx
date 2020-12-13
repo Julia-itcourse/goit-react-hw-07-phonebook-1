@@ -4,7 +4,8 @@ import PropTypes, { arrayOf } from "prop-types"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import "./ContactList.css"
 import { connect } from "react-redux"
-import contactsActions from "../../redux/contacts/contactsActions"
+// import contactsActions from "../../redux/contacts/contactsActions"
+import contactsOperations from "../../redux/contacts/contactsOperations"
 
 const ContactList = ({ contacts, onRemoveContact }) => {
   return (
@@ -40,6 +41,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  onRemoveContact: contactsActions.onRemoveContact,
+  onRemoveContact: contactsOperations.onRemoveContact,
+
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList)
