@@ -3,7 +3,7 @@ import { createReducer } from '@reduxjs/toolkit'
 import contactsActions from './contactsActions'
 
 const handleAdd = (state, action) =>{
-    return [...state, action.payload.newContact]
+    return [...state, action.payload]
 }
 
 const handleRemove = (state, action) =>{
@@ -11,7 +11,7 @@ const handleRemove = (state, action) =>{
 }
 
 const items = createReducer([], {
-    [contactsActions.onAddContact]: handleAdd,
+    [contactsActions.addContactSuccess]: handleAdd,
     [contactsActions.onRemoveContact]: handleRemove,
 })
 

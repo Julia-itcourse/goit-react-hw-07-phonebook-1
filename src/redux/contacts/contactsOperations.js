@@ -7,8 +7,7 @@ const onAddContact = ({name, number}) => dispatch =>{
     axios
     .post('http://localhost:2000/contacts', {name, number})
     .then(receivedData => {
-        console.log(receivedData);
-        dispatch(contactsActions.addContactSuccess());
+        dispatch(contactsActions.addContactSuccess(receivedData.data));
     })
     .catch(error => dispatch(contactsActions.addContactError(error)));
 
